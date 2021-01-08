@@ -1,0 +1,262 @@
+<html>
+<head>
+
+
+<style>
+body {
+        text-align: center;
+		background-color : lightgreen ; 
+
+        }
+
+.img {
+            height: 50px;
+            width: 60px;
+			direction : ltr ;
+			position : absolute ;
+        }
+		
+		.divstyle
+		{
+		height: 300px;
+        width: 300px;
+		position : absolute ; 
+		}
+		
+		.pclass
+		{
+		position : absolute ; 
+		}
+		
+		.buttonclass
+		{
+		position : absolute ; 
+		width : 50px ; 
+		height : 30px ; 
+		background-color : red ;
+		}
+		
+		table{font-size:150%}
+	table.menu
+	{
+	font-size:100%;
+	position:absolute;
+	visibility:hidden;
+	}
+	
+	
+	.mtable
+	{
+	position : absolute ;
+	margin : 5px ;
+	border: 5px solid red;
+	width : 300px ; 
+	height : 40px ; 
+	td{
+	border: 1px solid black;
+	width : 500px ; 
+	height : 50px ; 
+	}
+	}
+	
+	.calclass
+	{
+	position : absolute ; 
+	height : 40px ; 
+	width : 80px ;
+	top : 400px ; 
+	left : 1200px ;
+	font-size:120%;
+	text-align : center ; 
+
+	}
+	.cbclass
+	{
+	position:absolute ;
+	width : 40px ; 
+	height : 40px ;
+	font-size:120%;
+	text-align : center ;
+	}
+	
+		
+</style>
+
+
+</head>
+
+<body>
+
+<div class="divstyle" style="left : 430px ; top: 120px; ">
+<img class="img" src="kh1.jpg" style="left : 120px ; below: 200px; ">
+<p class="pclass" style="left : 90px ; top: 50px; "> Dart:	price:15000t </p>
+<button class="buttonclass" style="left : 125px ; top: 90px; " onclick="khdart(this)"> BUY  </button>
+</div>
+
+<div class="divstyle" style="left : 600px ; top: 120px; ">
+<img class="img" src="kh2.jpg">
+<p class="pclass" style="left : 120px ; top: 50px; "> Eynak:	price:45000t </p>
+<button class="buttonclass" style="left : 160px ; top: 90px; " onclick="kheynak(this)"> BUY  </button>
+</div>
+
+<div class="divstyle" style="left : 800px ; top: 120px; ">
+<img class="img" src="kh3.jpg">
+<p class="pclass" style="left : 120px ; top: 50px; "> Ketab:	price:15000t </p>
+<button class="buttonclass" style="left : 155px ; top: 90px; " onclick="khketab(this)"> BUY  </button>
+</div>
+
+
+
+
+<div class="divstyle" style="left : 400px ; top: 270px; ">
+<img id="img" class="img" src="kh4.jpg">
+<p class="pclass" style="left : 100px ; top: 50px; "> Saat Mochi:	price:75000 </p>
+<button class="buttonclass" style="left : 155px ; top: 90px; " onclick="khsaat(this)"> BUY  </button>
+</div>
+
+<div class="divstyle" style="left : 600px ; top: 270px; ">
+<img id="img" class="img" src="kh5.jpg">
+<p class="pclass" style="left : 100px ; top: 50px; "> HeadPhones:	price:80000 </p>
+<button class="buttonclass" style="left : 155px ; top: 90px; " onclick="khHeadPhone(this)"> BUY  </button>
+</div>
+
+<div class="divstyle" style="left : 800px ; top: 270px; ">
+<img id="img" class="img" src="kh6.jpg">
+<p class="pclass" style="left : 120px ; top: 50px; "> Kafsh:	price:35000</p>
+<button class="buttonclass" style="left : 155px ; top: 90px; " onclick="khkafsh(this)"> BUY  </button>
+</div>
+
+<table id="myTable" class="mtable" >
+  <tr>
+    <th><b> Sabade Kharid  </b></th>
+  </tr> 
+</table>
+
+<button style=" position:absolute ;  left : 750px ; top: 450px;" onclick="result(this)"><b> RESULT </b></button>
+<button style=" position:absolute ;  left : 745px ; top: 500px;" onclick="refresh(this)"><b> REFRESH </b></button>
+
+
+
+
+<div id="calculator" class = "divstyle" style=" top : 500px ; left : 1000px ;">
+
+      <form>
+        <input type="text" id="output" />
+      </form>
+	  <button onclick="handleClick(0)">0</button>
+      <button onclick="handleClick(1)">1</button>
+      <button onclick="handleClick(2)">2</button>
+      <button onclick="handleClick(3)">3</button>
+      <button onclick="handleClick(4)">4</button>
+      <button onclick="handleClick(5)">5</button>
+      <button onclick="handleClick(6)">6</button>
+      <button onclick="handleClick(7)">7</button>
+      <button onclick="handleClick(8)">8</button>
+      <button onclick="handleClick(9)">9</button>
+      <button onclick="handleClick('+')">+</button>
+      <button onclick="handleClick('-')">-</button>
+      <button onclick="handleClick('/')">/</button>
+      <button onclick="handleClick('*')">*</button>
+      <button onclick="natije()">=</button>
+    </div>
+		
+
+<script>
+var sum = 0 ; 
+var a = 0 ;
+function khdart()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " Dart          15000 ";
+	sum = sum + 15000 ;
+	a = a + 1 ;	
+}
+function kheynak()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " eynak          45000 ";
+	sum = sum + 45000 ;
+	a = a + 1 ;	
+	
+}
+function khketab()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " ketab         15000 ";
+	sum = sum + 15000 ; 
+	a = a + 1 ;	
+
+}
+function khsaat()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " Saat Mochi          75000 ";
+	sum = sum + 75000 ; 
+	a = a + 1 ;	
+
+}
+function khHeadPhone()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " HeadPhone          80000 ";
+	sum = sum + 80000 ; 
+	a = a + 1 ;	
+
+}
+function khkafsh()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = " Kafsh          35000 ";
+	sum = sum + 35000 ;
+	a = a + 1 ;	
+	
+}
+function result()
+{
+	var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+	cell1.innerHTML = sum;
+}
+
+
+function refresh ()
+{
+	sum = 0 ;
+	for(var i = 1; i < a;)
+{   
+   document.getElementById("myTable").deleteRow(i);
+}
+	a = 0 ; 
+}
+	var input = "";
+
+    function handleClick(data) {
+
+        input += data;
+        document.getElementById("output").value = input;
+        console.log(input);
+      }
+
+    function natije(data) {
+        input = document.getElementById("output").value = eval(input);
+      }
+
+
+</script>
+
+
+</body>
+</html>
